@@ -1,5 +1,5 @@
-<%@page import="java.io.PrintWriter"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@page import="java.io.PrintWriter"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 String path = request.getContextPath();
@@ -22,11 +22,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-<%--    	欢迎您<a href="#">${user.userName }</a>登入<a href="<c:url value ='/loginOut'/>">退出</a> --%>  
-	<% 
-		response.setCharacterEncoding("utf-8");
-		PrintWriter pw =  response.getWriter();
-		pw.write("{\"code\": \"1\",  \"msg\": \"登入成功\"}");
-	%>
+    	欢迎您<a href="#"> ${user.id} </a>登入<a href="<c:url value ='/loginOut'/>">退出</a>  
   </body>
 </html>

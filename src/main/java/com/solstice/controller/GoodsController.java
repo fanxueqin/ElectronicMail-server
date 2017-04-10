@@ -36,7 +36,7 @@ public class GoodsController {
 	 * @return
 	 */
 	@RequestMapping(value = "/catalog/size")
-	public Result getCatalogPageSize(HttpServletRequest request, int catalog) {
+	public String getCatalogPageSize(HttpServletRequest request, int catalog) {
 		Result result = null;
 		try {
 			int sum = goodService.getCatalogGoodsSum(catalog);
@@ -46,7 +46,8 @@ public class GoodsController {
 						GoodsCatalog.valueOf(catalog)+"类商品", 0);
 			}
 			else {
-				result = new Result(ResultCode.SUCESS, "获取商品分页数",sum % PAGAE_LEN + 1);
+				int pageSzie = sum / PAGAE_LEN + 1;
+				result = new Result(ResultCode.SUCESS, "获取商品分页数", pageSzie);
 			}
 		}
 		catch (UserException e) {
@@ -57,7 +58,10 @@ public class GoodsController {
 			result = new Result(ResultCode.FAIL, "出现异常", null);
 			e.printStackTrace();
 		} 
-		return result;
+		
+		request.setAttribute("message", result.toString());
+		
+		return "message";
 	}
 	
 	

@@ -10,6 +10,9 @@
         <result column="url" jdbcType="CHAR" property="url"/>
         <result column="add_time" jdbcType="DATE" property="addTime"/>
     </resultMap>
+    <select id="getCatalogGoodsSum"  parameterType="int" resultType="int">
+		SELECT COUNT(*) FROM tb_goods WHERE catalog = #{catalog}
+	</select>
 	<select id="getGoodsList" resultMap="goodsMap" >
 		SELECT * FROM tb_goods
 	</select>
@@ -21,9 +24,6 @@
 	</select>
 	<select id="getCatalogGoodsPage" resultMap="goodsMap" >
 		SELECT * FROM tb_goods WHERE catalog = #{2} LIMIT #{0},#{1}
-	</select>
-	<select id="getCatalogGoodsSum"  parameterType="int" resultType="int">
-		SELECT COUNT(*) FROM tb_goods WHERE catalog = #{catalog}
 	</select>
 	<select id="findGoodsByKey"  parameterType="string" resultMap="goodsMap">
 		SELECT * FROM tb_goods WHERE name LIKE #{key}

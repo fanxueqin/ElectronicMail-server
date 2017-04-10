@@ -34,8 +34,8 @@ public class UserController {
 		// 帐号的判断：可以是手机号，或者邮箱
 		if (Utils.isEmpty(user.getId())) {
 			errors.put("id", "用户名不能为null");
-		} else if (!Utils.isEmail(user.getId()) && !Utils.isPhone(user.getId())){
-			errors.put("id", "id只能为邮箱或者手机号");
+		} else if (!Utils.isEmail(user.getId())){
+			errors.put("id", "id只能为邮箱");
 		}
 
 		// 密码的判断
@@ -73,7 +73,7 @@ public class UserController {
 	 */
 	@RequestMapping("/regist")
 	public String regist(HttpServletRequest request, User user) {
-		// 补全代码
+		
 		String activeCode = UUID.randomUUID().toString();
 		user.setActiveCode(activeCode);
 		//根据id的类别，覆盖相应的属性
@@ -123,10 +123,7 @@ public class UserController {
 			e.printStackTrace();
 		}
 
-		request.setAttribute("message",
-				"请到邮箱" + user.getEmail() + "完成激活操作。如已操作请点击下面的链接去登录" + System.getProperty("line.separator", "\n")
-						+ "<a href=\"http://localhost:8080" + request.getContextPath()
-						+ "/user/toLogin>点击这里去登录</a>");
+		request.setAttribute("message","请到邮箱" + user.getEmail() + "完成激活操作。如已操作请点击下面的按钮去登录");
 		return "message";
 	}
 
@@ -159,8 +156,8 @@ public class UserController {
 		// 用户名的判断,可以是手机号或者邮箱
 		if (Utils.isEmpty(user.getId())) {
 			errors.put("id", "用户名不能为null");
-		} else if (!Utils.isEmail(user.getId()) && !Utils.isPhone(user.getId())){
-			errors.put("id", "id只能为邮箱或者手机号");
+		} else if (!Utils.isEmail(user.getId())){
+			errors.put("id", "id只能为邮箱");
 		}
 		// 密码的判断
 		if (Utils.isEmpty(user.getPwd())) {
@@ -180,6 +177,7 @@ public class UserController {
 			User _user = userService.login(user);
 			// 保存账号信息到session域中
 			request.getSession().setAttribute("user", _user);
+			
 			return "index";
 		} catch (UserException e) {
 			request.setAttribute("error", e.getMessage());
