@@ -1,3 +1,8 @@
+.settings
+.classpath
+.project
+.externalToolBuilders
+logs
 target/
 pom.xml.tag
 pom.xml.releaseBackup
