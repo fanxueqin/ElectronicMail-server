@@ -27,7 +27,7 @@ public class GoodsController {
 	@Autowired
 	private GoodsService goodService;
 	
-	private  static final int PAGAE_LEN = 20;
+	private  static final int PAGAE_LEN = 5;
 	
 	/**
 	 * 获取分页页数
@@ -75,7 +75,7 @@ public class GoodsController {
 	 * @return
 	 */
 	@RequestMapping(value = "/catalog/page")
-	public Result getCatalogGoodsPage(HttpServletRequest request, int index, int catalog) {
+	public String getCatalogGoodsPage(HttpServletRequest request, int index, int catalog) {
 		Result result = null;
 		try {
 			//前端需要输入的index必须大于0
@@ -96,15 +96,15 @@ public class GoodsController {
 			}
 		}
 		catch (UserException e) {
-			result = new Result(ResultCode.FAIL, "出现异常", null);
+			result = new Result(ResultCode.FAIL, e.getMessage(), null);
 			LOGGER.info(e.getMessage());
 		}
 		catch (Exception e) {
-			result = new Result(ResultCode.FAIL, "出现异常", null);
+			result = new Result(ResultCode.FAIL, e.getMessage(), null);
 			e.printStackTrace();
 		} 
-		
-		return result;
+		request.setAttribute("message", result.toString());
+		return "message";
 	}
 	
 	/**
@@ -115,7 +115,7 @@ public class GoodsController {
 	 * @return
 	 */
 	@RequestMapping(value = "/catalog/top10")
-	public Result getCatalogGoodsTop10(HttpServletRequest request, int catalog) {
+	public String getCatalogGoodsTop10(HttpServletRequest request, int catalog) {
 		Result result = null;
 		try {
 			List<Goods> list = goodService.getCatalogGoodsTop10(catalog); 
@@ -140,7 +140,8 @@ public class GoodsController {
 			result = new Result(ResultCode.FAIL, "出现异常", null);
 			e.printStackTrace();
 		}
-		return result;
+		request.setAttribute("message", result.toString());
+		return "message";
 	}
 	
 	/**
@@ -151,7 +152,7 @@ public class GoodsController {
 	 * @return
 	 */
 	@RequestMapping(value = "/search")
-	public Result findGoodsByKey(HttpServletRequest request, String key) {
+	public String findGoodsByKey(HttpServletRequest request, String key) {
 		Result result = null;
 		try {
 			//前端需要限定输入的关键字不能为空
@@ -178,7 +179,8 @@ public class GoodsController {
 			result = new Result(ResultCode.FAIL, "出现异常", null);
 			e.printStackTrace();
 		}
-		return result;
+		request.setAttribute("message", result.toString());
+		return "message";
 	}
 	
 	/**
@@ -189,7 +191,7 @@ public class GoodsController {
 	 * @return
 	 */
 	@RequestMapping(value = "/add")
-	public Result addGoods(HttpServletRequest request, Goods goods) {
+	public String addGoods(HttpServletRequest request, Goods goods) {
 		Result result = null;
 		try {
 			goodService.addGoods(goods); 
@@ -203,7 +205,8 @@ public class GoodsController {
 			result = new Result(ResultCode.FAIL, "添加失败", false);
 			e.printStackTrace();
 		}
-		return result;
+		request.setAttribute("message", result.toString());
+		return "message";
 	}
 		
 	/**
@@ -214,7 +217,7 @@ public class GoodsController {
 	 * @return
 	 */
 	@RequestMapping(value = "/delete")
-	public Result deleteGoods(HttpServletRequest request, int id) {
+	public String deleteGoods(HttpServletRequest request, int id) {
 		Result result = null;
 		try {
 			goodService.deleteGoods(id); 
@@ -224,7 +227,8 @@ public class GoodsController {
 			result = new Result(ResultCode.FAIL, "删除失败", false);
 			e.printStackTrace();
 		}
-		return result;
+		request.setAttribute("message", result.toString());
+		return "message";
 	}
 
 	/**
@@ -235,7 +239,7 @@ public class GoodsController {
 	 * @return
 	 */
 	@RequestMapping(value = "/update/name")
-	public Result updateName(HttpServletRequest request, Goods goods) {
+	public String updateName(HttpServletRequest request, Goods goods) {
 		Result result = null;
 		try {
 			goodService.updateName(goods); 
@@ -249,7 +253,8 @@ public class GoodsController {
 			result = new Result(ResultCode.FAIL, "更新失败", false);
 			e.printStackTrace();
 		}
-		return result;
+		request.setAttribute("message", result.toString());
+		return "message";
 	}
 
 	/**
@@ -260,7 +265,7 @@ public class GoodsController {
 	 * @return
 	 */
 	@RequestMapping(value = "/update/detail")
-	public Result updateDetail(HttpServletRequest request, Goods goods) {
+	public String updateDetail(HttpServletRequest request, Goods goods) {
 		Result result = null;
 		try {
 			goodService.updateDetail(goods); 
@@ -274,7 +279,8 @@ public class GoodsController {
 			result = new Result(ResultCode.FAIL, "更新失败", false);
 			e.printStackTrace();
 		}
-		return result;
+		request.setAttribute("message", result.toString());
+		return "message";
 	}
 	
 	/**
@@ -285,7 +291,7 @@ public class GoodsController {
 	 * @return
 	 */
 	@RequestMapping(value = "/update/price")
-	public Result updatePrice(HttpServletRequest request, Goods goods) {
+	public String updatePrice(HttpServletRequest request, Goods goods) {
 		Result result = null;
 		try {
 			goodService.updatePrice(goods); 
@@ -299,7 +305,8 @@ public class GoodsController {
 			result = new Result(ResultCode.FAIL, "更新失败", false);
 			e.printStackTrace();
 		}
-		return result;
+		request.setAttribute("message", result.toString());
+		return "message";
 	}
 	
 	/**
@@ -310,7 +317,7 @@ public class GoodsController {
 	 * @return
 	 */
 	@RequestMapping(value = "/update/catalog")
-	public Result updateCatalog(HttpServletRequest request, Goods goods) {
+	public String updateCatalog(HttpServletRequest request, Goods goods) {
 		Result result = null;
 		try {
 			goodService.updateCatalog(goods); 
@@ -324,7 +331,8 @@ public class GoodsController {
 			result = new Result(ResultCode.FAIL, "更新失败", false);
 			e.printStackTrace();
 		}
-		return result;
+		request.setAttribute("message", result.toString());
+		return "message";
 	}
 	
 	/**
@@ -335,7 +343,7 @@ public class GoodsController {
 	 * @return
 	 */
 	@RequestMapping(value = "/update/url")
-	public Result updateUrl(HttpServletRequest request, Goods goods) {
+	public String updateUrl(HttpServletRequest request, Goods goods) {
 		Result result = null;
 		try {
 			goodService.updateUrl(goods); 
@@ -349,7 +357,8 @@ public class GoodsController {
 			result = new Result(ResultCode.FAIL, "更新失败", false);
 			e.printStackTrace();
 		}
-		return result;
+		request.setAttribute("message", result.toString());
+		return "message";
 	}
 	
     @Test

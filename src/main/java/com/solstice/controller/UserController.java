@@ -22,46 +22,6 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	/**
-	 * 验证输入合法性
-	 * 
-	 * @param user
-	 * @return 错误map
-	 */
-	public Map<String, String> verifyInput(User user) {
-
-		Map<String, String> errors = new HashMap<String, String>();
-		// 帐号的判断：可以是手机号，或者邮箱
-		if (Utils.isEmpty(user.getId())) {
-			errors.put("id", "用户名不能为null");
-		} else if (!Utils.isEmail(user.getId())){
-			errors.put("id", "id只能为邮箱");
-		}
-
-		// 密码的判断
-		if (Utils.isEmpty(user.getPwd())) {
-			errors.put("pwd", "密码不能为null");
-		} 
-		else if (user.getPwd().trim().length() > 18 || user.getPwd().trim().length() < 6) {
-			errors.put("pwd", "密码长度必须介于6~18之间");
-		}
-		// 邮箱的判断
-		if (Utils.isEmpty(user.getEmail())) {
-			errors.put("email", "邮箱不能为null");
-		}
-		else if (!Utils.isEmail(user.getEmail().trim())) {// 邮箱格式为***@**.***
-			errors.put("email", "邮箱格式不正确");
-		}
-		// 手机号的判断
-		if (Utils.isEmpty(user.getPhone())) {
-			errors.put("phone", "手机号码不能为null");
-		}
-		else if (!Utils.isPhone(user.getPhone().trim())) {
-			errors.put("phone", "手机号码格式不正确");
-		}
-		
-		return errors;
-	}
 
 	@RequestMapping("/toRegist")
 	public String toRegist() {
@@ -88,7 +48,8 @@ public class UserController {
 		}
 	
 		//验证属性的合法性
-		Map<String, String> errors = verifyInput(user);		
+		Map<String, String> errors = Utils.validateModel(user);		
+		
 		if (errors.size() > 0) {
 			// 保存错误信息
 			request.setAttribute("errors", errors);
@@ -153,18 +114,10 @@ public class UserController {
 	@RequestMapping(value = "/login")
 	public String login(HttpServletRequest request, User user) {
 		Map<String, String> errors = new HashMap<String, String>();
-		// 用户名的判断,可以是手机号或者邮箱
-		if (Utils.isEmpty(user.getId())) {
-			errors.put("id", "用户名不能为null");
-		} else if (!Utils.isEmail(user.getId())){
-			errors.put("id", "id只能为邮箱");
-		}
-		// 密码的判断
-		if (Utils.isEmpty(user.getPwd())) {
-			errors.put("pwd", "密码不能为null");
-		} else if (user.getPwd().trim().length() > 18 || user.getPwd().trim().length() < 6) {
-			errors.put("pwd", "密码长度必须介于6~18之间");
-		}
+		 System.out.println("\n\n\n\n"+user.toString()+"\n\n\n\n");
+		 errors = Utils.validateModel(user);
+		 System.out.println("\n\n\n\n"+errors+"\n\n\n\n");
+		
 		if (errors.size() > 0) {
 			// 保存错误信息
 			request.setAttribute("errors", errors);
@@ -172,6 +125,7 @@ public class UserController {
 			request.setAttribute("user", user);
 			return "login";
 		}
+		
 		try {
 
 			User _user = userService.login(user);

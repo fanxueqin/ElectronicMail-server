@@ -68,14 +68,14 @@ public class GoodsServiceImpl implements GoodsService {
 	public List<Goods> getCatalogGoodsPage(int start, int length, int catalog) 
 			throws UserException{
 		List<Goods> result = null;
-		if (catalog > 5 || catalog < 1){
+		if (catalog > 6 || catalog < 0){
 			throw new UserException(
-					String.format("参数[%s]不合法，必须在1-5之间", catalog));
+					String.format("类别参数[%s]不合法，必须在1-5之间", catalog));
 		}
 		
 		if (start < 0){
 			throw new UserException(
-					String.format("参数[%s]不合法，必须在1-5之间", catalog));
+					String.format("起始位参数[%s]不合法，必须>=0", start));
 		}
 		
 		result = goodMapper.getCatalogGoodsPage(start, length, catalog);
@@ -105,7 +105,7 @@ public class GoodsServiceImpl implements GoodsService {
 		}
 		
 		int catalog = goods.getCatalog();
-		if(catalog >5 || catalog < 1){
+		if(catalog > 6 || catalog < 0){
 			throw new UserException(String.format("catalog[%s]超过范围1-5", catalog));
 		}
 		
@@ -163,7 +163,7 @@ public class GoodsServiceImpl implements GoodsService {
 			throw new UserException("id未设置，请设置id");
 		}
 		
-		if(goods.getCatalog() > 5 || goods.getCatalog() < 1){
+		if(goods.getCatalog() > 6 || goods.getCatalog() < 0){
 			throw new UserException(String.format("catalog[%s]超出范围1-5", 
 					goods.getCatalog()));
 		}

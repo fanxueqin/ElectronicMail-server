@@ -1,25 +1,41 @@
 
 package com.solstice.bean;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
+
 import com.alibaba.fastjson.JSONObject;
 
 
 public class User {
 	//用户id，在移动端使用手机号，在web端使用邮箱
+    @NotNull(message = "id不能为空") 
+    @Email(message = "id只能为邮箱账号")
 	private String id;
 	//用户名
 	private String name;
 	//密码
+	@Length(min = 6, max = 18, message = "密码长度只能在6-18位之间")
 	private String pwd;
 	//邮箱
+	@Email(message = "邮箱格式不正确")
 	private String email;
 	//0-保密，1-男，2-女
-	private int sex = 0;
+	@Min(value = 0, message = "性别的值只能为0，1，2")
+	@Max(value = 2, message = "性别的值只能为0，1，2")
+	private Integer sex = 0;
 	//手机号码
+	@Phone(value = "phone", message = "手机号码格式不正确")
 	private String phone;
 	//激活状态 1-已激活 ，0-未激活
-	private int status;
+	@Min(value = 0, message = "激活状态只能是0或1")
+	@Max(value = 1, message = "激活状态只能是0或1")
+	private Integer status;
 	//激活码
+	@Max(value = 64, message = "激活码最大长度为64位UUID")
 	private String activeCode;
 	
 	public User(){}

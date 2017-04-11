@@ -2,10 +2,16 @@ package com.solstice.bean;
 
 import java.util.Date;
 
+import javax.validation.constraints.Future;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 import com.alibaba.fastjson.JSONObject;
 
 public class Goods {
 	//商品id，自增
+	@NotNull
 	private int id = -1;
 	//商品名称
 	private String name;
@@ -14,10 +20,13 @@ public class Goods {
 	//商品价格
 	private double price;
 	//商品种类，1-5各映射相应的类型
+	@Max(value = 5, message = "值必须不大于5")
+	@Min(value = 1, message = "值必须不小于1")  
 	private int catalog;
-	//商品图片链接，每种商品有多张图片链接，使用 ‘|’分隔
+	//商品图片链接，每种商品有多张图片链接，使用 '|'分隔
 	private String url;
 	//商品添加的时间，以此为基准判断是否为新品（可以取前十条，也可以根据时间戳取若干条数据）
+	@Future(message = "添加时间必须大于当前时间")
 	private Date addTime;
 	
 	public int getId() {
