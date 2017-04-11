@@ -51,11 +51,11 @@ public class GoodsController {
 			}
 		}
 		catch (UserException e) {
-			result = new Result(ResultCode.FAIL, "出现异常", null);
+			result = new Result(ResultCode.FAIL, e.getMessage(), null);
 			LOGGER.info(e.getMessage());
 		}
 		catch (Exception e) {
-			result = new Result(ResultCode.FAIL, "出现异常", null);
+			result = new Result(ResultCode.FAIL, e.getMessage(), null);
 			e.printStackTrace();
 		} 
 		
@@ -133,11 +133,11 @@ public class GoodsController {
 			}
 		}
 		catch (UserException e) {
-			result = new Result(ResultCode.FAIL, "出现异常", null);
+			result = new Result(ResultCode.FAIL, e.getMessage(), null);
 			LOGGER.info(e.getMessage());
 		}
 		catch (Exception e) {
-			result = new Result(ResultCode.FAIL, "出现异常", null);
+			result = new Result(ResultCode.FAIL, e.getMessage(), null);
 			e.printStackTrace();
 		}
 		request.setAttribute("message", result.toString());
@@ -173,10 +173,10 @@ public class GoodsController {
 		}
 		catch (UserException e) {
 			LOGGER.info(e.getMessage());
-			result = new Result(ResultCode.FAIL, "出现异常", null);
+			result = new Result(ResultCode.FAIL, e.getMessage(), null);
 		}
 		catch (Exception e) {
-			result = new Result(ResultCode.FAIL, "出现异常", null);
+			result = new Result(ResultCode.FAIL, e.getMessage(), null);
 			e.printStackTrace();
 		}
 		request.setAttribute("message", result.toString());
@@ -193,16 +193,17 @@ public class GoodsController {
 	@RequestMapping(value = "/add")
 	public String addGoods(HttpServletRequest request, Goods goods) {
 		Result result = null;
+		System.out.println("\n\n\n\n"+goods);
 		try {
 			goodService.addGoods(goods); 
-			result = new Result(ResultCode.FAIL, "添加成功", true);
+			result = new Result(ResultCode.SUCESS, "添加成功", true);
 		}
 		catch (UserException e) {
 			LOGGER.info(e.getMessage());
-			result = new Result(ResultCode.FAIL, "添加失败", false);
+			result = new Result(ResultCode.FAIL, e.getMessage(), false);
 		}
 		catch (Exception e) {
-			result = new Result(ResultCode.FAIL, "添加失败", false);
+			result = new Result(ResultCode.FAIL, e.getMessage(), false);
 			e.printStackTrace();
 		}
 		request.setAttribute("message", result.toString());
@@ -221,10 +222,10 @@ public class GoodsController {
 		Result result = null;
 		try {
 			goodService.deleteGoods(id); 
-			result = new Result(ResultCode.FAIL, "删除成功", true);
+			result = new Result(ResultCode.SUCESS, "删除成功", true);
 		}
 		catch (Exception e) {
-			result = new Result(ResultCode.FAIL, "删除失败", false);
+			result = new Result(ResultCode.FAIL, e.getMessage(), false);
 			e.printStackTrace();
 		}
 		request.setAttribute("message", result.toString());
@@ -243,14 +244,14 @@ public class GoodsController {
 		Result result = null;
 		try {
 			goodService.updateName(goods); 
-			result = new Result(ResultCode.FAIL, "商品名称更新成功", true);
+			result = new Result(ResultCode.SUCESS, "商品名称更新成功", true);
 		}
 		catch (UserException e) {
 			LOGGER.info(e.getMessage());
-			result = new Result(ResultCode.FAIL, "更新失败", false);
+			result = new Result(ResultCode.FAIL, e.getMessage(), false);
 		}
 		catch (Exception e) {
-			result = new Result(ResultCode.FAIL, "更新失败", false);
+			result = new Result(ResultCode.FAIL, e.getMessage(), false);
 			e.printStackTrace();
 		}
 		request.setAttribute("message", result.toString());
@@ -269,14 +270,14 @@ public class GoodsController {
 		Result result = null;
 		try {
 			goodService.updateDetail(goods); 
-			result = new Result(ResultCode.FAIL, "商品详情更新成功", true);
+			result = new Result(ResultCode.SUCESS, "商品详情更新成功", true);
 		}
 		catch (UserException e) {
 			LOGGER.info(e.getMessage());
-			result = new Result(ResultCode.FAIL, "更新失败", false);
+			result = new Result(ResultCode.FAIL, e.getMessage(), false);
 		}
 		catch (Exception e) {
-			result = new Result(ResultCode.FAIL, "更新失败", false);
+			result = new Result(ResultCode.FAIL, e.getMessage(), false);
 			e.printStackTrace();
 		}
 		request.setAttribute("message", result.toString());
@@ -295,14 +296,14 @@ public class GoodsController {
 		Result result = null;
 		try {
 			goodService.updatePrice(goods); 
-			result = new Result(ResultCode.FAIL, "商品价格更新成功", true);
+			result = new Result(ResultCode.SUCESS, "商品价格更新成功", true);
 		}
 		catch (UserException e) {
 			LOGGER.info(e.getMessage());
-			result = new Result(ResultCode.FAIL, "更新失败", false);
+			result = new Result(ResultCode.FAIL, e.getMessage(), false);
 		}
 		catch (Exception e) {
-			result = new Result(ResultCode.FAIL, "更新失败", false);
+			result = new Result(ResultCode.FAIL, e.getMessage(), false);
 			e.printStackTrace();
 		}
 		request.setAttribute("message", result.toString());
@@ -321,14 +322,14 @@ public class GoodsController {
 		Result result = null;
 		try {
 			goodService.updateCatalog(goods); 
-			result = new Result(ResultCode.FAIL, "商品分类更新成功", true);
+			result = new Result(ResultCode.SUCESS, "商品分类更新成功", true);
 		}
 		catch (UserException e) {
 			LOGGER.info(e.getMessage());
-			result = new Result(ResultCode.FAIL, "更新失败", false);
+			result = new Result(ResultCode.FAIL, e.getMessage(), false);
 		}
 		catch (Exception e) {
-			result = new Result(ResultCode.FAIL, "更新失败", false);
+			result = new Result(ResultCode.FAIL, e.getMessage(), false);
 			e.printStackTrace();
 		}
 		request.setAttribute("message", result.toString());
@@ -347,14 +348,14 @@ public class GoodsController {
 		Result result = null;
 		try {
 			goodService.updateUrl(goods); 
-			result = new Result(ResultCode.FAIL, "商品链接更新成功", true);
+			result = new Result(ResultCode.SUCESS, "商品链接更新成功", true);
 		}
 		catch (UserException e) {
 			LOGGER.info(e.getMessage());
-			result = new Result(ResultCode.FAIL, "更新失败", false);
+			result = new Result(ResultCode.FAIL, e.getMessage(), false);
 		}
 		catch (Exception e) {
-			result = new Result(ResultCode.FAIL, "更新失败", false);
+			result = new Result(ResultCode.FAIL, e.getMessage(), false);
 			e.printStackTrace();
 		}
 		request.setAttribute("message", result.toString());

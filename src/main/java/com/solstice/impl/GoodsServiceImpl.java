@@ -1,6 +1,7 @@
 package com.solstice.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,7 @@ import com.solstice.bean.Goods;
 import com.solstice.exception.UserException;
 import com.solstice.mapper.GoodsMapper;
 import com.solstice.service.GoodsService;
+import com.solstice.utils.Utils;
 
 @Service
 public class GoodsServiceImpl implements GoodsService {
@@ -68,7 +70,7 @@ public class GoodsServiceImpl implements GoodsService {
 	public List<Goods> getCatalogGoodsPage(int start, int length, int catalog) 
 			throws UserException{
 		List<Goods> result = null;
-		if (catalog > 6 || catalog < 0){
+		if (catalog > 5 || catalog < 1){
 			throw new UserException(
 					String.format("类别参数[%s]不合法，必须在1-5之间", catalog));
 		}
@@ -100,19 +102,12 @@ public class GoodsServiceImpl implements GoodsService {
 	@Override
 	public void addGoods(Goods goods) throws UserException{
 		
-		if(goods == null){
-			throw new UserException("添加的对象为空");
-		}
+		Map<String, String> errors = Utils.validateModel(goods);	
 		
-		int catalog = goods.getCatalog();
-		if(catalog > 6 || catalog < 0){
-			throw new UserException(String.format("catalog[%s]超过范围1-5", catalog));
+		if (errors.size() > 0) {
+			throw new UserException(errors.toString());
 		}
-		
-		if (goods.getAddTime() == null){
-			throw new UserException("商品的添加时间为空");
-		}
-		
+
 		goodMapper.addGoods(goods);
 	}
 
@@ -163,7 +158,7 @@ public class GoodsServiceImpl implements GoodsService {
 			throw new UserException("id未设置，请设置id");
 		}
 		
-		if(goods.getCatalog() > 6 || goods.getCatalog() < 0){
+		if(goods.getCatalog() > 5 || goods.getCatalog() < 1){
 			throw new UserException(String.format("catalog[%s]超出范围1-5", 
 					goods.getCatalog()));
 		}

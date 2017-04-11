@@ -31,4 +31,13 @@ public class PageController {
 		return mav;
 	}
 	
+	@RequestMapping("addGoods")
+	public ModelAndView addGoods() {
+		ModelAndView mav = new ModelAndView("addGoods");
+		return mav;
+	}
+	
+	
+	
+	
 }

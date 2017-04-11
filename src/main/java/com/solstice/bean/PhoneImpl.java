@@ -14,6 +14,9 @@ public class PhoneImpl implements ConstraintValidator<Phone, String> {
 
 	@Override
 	public boolean isValid(String value, ConstraintValidatorContext context) {
+		if(value == null)
+			return true;
+		
 		return Utils.isPhone(value) ? true : false;
 	}
 }
