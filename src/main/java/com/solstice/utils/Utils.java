@@ -80,15 +80,6 @@ public class Utils {
 					violation.getMessage());
 		}
 		
-//		if (obj instanceof User){
-//			User user = (User) obj;
-//			if(user.getPhone() != null){
-//				if (!isPhone(user.getPhone())){
-//					errors.put("phone", "手机号码格式不正确");
-//				}
-//			}
-//		}
-		
 		return errors;
 	}
 
