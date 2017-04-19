@@ -1,0 +1,17 @@
+<div class="adminManager_order" ng-controller="adminManager_order">
+	<div class="toIndex">
+		<a  ui-sref="adminIndex">管理员首页</a><span>--订单管理</span>
+	</div>
+	<div class="order_list">
+		<ul>
+			<li ng-repeat="order in data.lists" ng-if="order.order_status==1">
+				<span>订单</span>
+				<span class="order_no">{{order.id}} : </span>
+				<span class="order_name">
+					{{order.info}}
+				</span>
+				<button class="btn btn-primary" ng-click="order_cancel($index)">确认取消</button>
+			</li>
+		</ul>		
+	</div>
+</div>

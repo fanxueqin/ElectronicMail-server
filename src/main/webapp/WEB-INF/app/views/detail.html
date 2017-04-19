@@ -1,0 +1,56 @@
+<!-- 搜索区 -->
+	<div class="searchWrap">
+		<div class="input-group search">
+				<input type="text" name="search" class="form-control" placeholder="搜索">
+				<div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+		</div>
+	</div>
+<!-- 导航区 -->
+	<div class="nav_bar">
+		<ul>
+			<li ui-sref-active="active_shop" ui-sref="main">首页</li>
+			<li ui-sref-active="active_shop" ui-sref="shop_hufu">护肤</li>
+			<li ui-sref-active="active_shop" ui-sref="shop_makeup">彩妆</li>
+			<li ui-sref-active="active_shop" ui-sref="shop_fashion">时尚</li>
+			<li ui-sref-active="active_shop" ui-sref="shop_accesory">配饰</li>
+			<li ui-sref-active="active_shop" ui-sref="shop_home">家居</li>
+		</ul>
+	</div>
+<!-- 	商品详情区 -->
+<div class="shop_detail" ng-controller="detail">
+	
+	<div ng-if="data.currentImg == 1" class="big_img">
+		<img src="../images/list_recomend/1.jpg">
+	</div>
+	<div ng-if="data.currentImg == 2" class="big_img">
+		<img src="../images/list_recomend/2.jpg">
+	</div>
+	<div ng-if="data.currentImg == 3" class="big_img">
+		<img src="../images/list_recomend/3.jpg">
+	</div>
+	<div class="small_img">
+		<ul>
+			<li ng-click="changeBigImg(1)"><img src="../images/list_recomend/1.jpg"></li>
+			<li ng-click="changeBigImg(2)"><img src="../images/list_recomend/2.jpg"></li>
+			<li ng-click="changeBigImg(3)"><img src="../images/list_recomend/3.jpg"></li>
+		</ul>
+	</div>
+	<div class="shop_info">
+		<h3>商品详情</h3>
+		<p>
+			“出门在外想补个妆或者想自拍时光线却很暗，随身携带一个EMIE美妆镜，“镜子占用空间很小，放在包包里随时可以拿出来使用”，三级LED补光功能，“可以根据光线明暗度选择合适的补光强度”，“终于不用担心自拍时是个黑人了”，高清镜面，“可以照出脸上每一个小细节，化一个精致无死角的妆”，“强迫症患者的福音”
+		</p>
+		<h1 class="price">
+			￥ 78.0
+		</h1>
+		<button ui-sref="order_list">立即购买</button>
+		<div class="shop_service" >
+			<h3>商品服务</h3>
+			<p>- 女盆友闪电发货</p>	
+			<p>- 包邮</p>
+			<p>- 30天退货</p>
+		</div>
+	</div>
+	
+</div>
+

@@ -1,0 +1,42 @@
+<div class="order_manager" ng-controller="order_manager">
+	<div class="list">
+		<div class="order_info" ng-repeat =" list in data.lists">
+			<div class="order_info_content">
+				<div class="tit">
+					<div class="col-sm-6">
+						<p>订单名</p>
+					</div>
+					<div class="col-sm-3">
+						<p>订单价格</p>
+					</div>
+					<div class="col-sm-3">
+						<p>订单状态</p>
+					</div>
+				</div>
+				<div class="con">
+					<div class="col-sm-6">
+						<div class="baby_desc">
+							{{list.info}}
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="baby_price">
+							{{list.price}}
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<span class="baby_status" ng-if="list.order_status == 0" ng-class="{'unfinished': list.order_status == 0}">
+							未完成
+						</span>
+						<span class="baby_status" ng-if="list.order_status == 1" ng-class="{'success': list.order_status == 1}" >
+							已完成
+						</span>
+						<button class="btn btn-confirm" ng-if="list.order_status == 0" ng-click="order_confirm($index)">
+							确认收货
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

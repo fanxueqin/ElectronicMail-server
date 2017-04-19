@@ -1,0 +1,21 @@
+<div class="adminManager_goods" ng-controller="adminManager_goods">
+	<div class="toIndex">
+			<a  ui-sref="adminIndex">管理员首页</a><span>--商品管理</span>
+	</div>
+	<div class="addWrap">
+		<button class="floatR" ui-sref="adminAdd_goods">增加商品</button>
+	</div>
+	<div class="good_list">
+		<h4>已有商品列表</h4>
+		<li ng-repeat="good in data.lists">
+			<div class="good_img">
+				<img src={{good.urlImg[0]}}>
+			</div>
+			<div class="good_name">{{good.name}}</div>
+			<div class="good_operation">
+				<button>修改</button>
+				<button ng-click="good_del($index)">删除</button>
+			</div>
+		</li>
+	</div>
+</div>

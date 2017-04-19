@@ -1,0 +1,27 @@
+
+<div class="loginWrapper">
+	<div class="login" ng-controller="loginController">
+		<h2>登录</h2>
+		<form name="signUpForm" action="/user/login/" method="post" >
+			<div class="form-group">
+			    <div class="input-group">
+			      <div class="input-group-addon"><i class="glyphicon glyphicon-user"></i></div>
+			      <input type="text" class="form-control" placeholder="用户名">
+			    </div>
+			 </div>
+			<div class="form-group">
+			    <div class="input-group">
+			      <div class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></div>
+			      <input type="password" class="form-control" placeholder="密码">
+			    </div>
+			</div>
+		</form>
+		<button type="submit" class="btn btn-primary form-control">登录</button>
+		<div class="floatR">
+			<a class="findPass" ui-sref="changePass">忘记密码</a>
+			<a class="registerPort" ui-sref="register">免费注册</a>
+			<a ui-sref="adminLogin">管理员登录</a>
+		</div>
+		
+	</div>
+</div>

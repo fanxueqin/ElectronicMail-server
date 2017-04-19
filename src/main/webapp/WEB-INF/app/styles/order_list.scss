@@ -1,0 +1,95 @@
+.order_list{
+	margin: 60px 100px;
+	.order_addr{
+		width: 100%;
+		.panel-heading{
+			outline:none
+		}
+		.error{
+			color:red;
+		}
+		.panel-body.order_addr_body{
+			margin:　40px 0;
+			label{
+				font-weight: 400;
+    			font-family: '微软雅黑';
+			}
+			.btn-save{
+				background: #eee;
+			    color: #818181;
+			    border: none;
+			    letter-spacing: 20px;
+			    font-weight: 500
+			}
+		}
+	}
+	.order_info{
+		height:400px;
+		margin-top: 100px;
+		.title{
+			margin-bottom: 50px;
+		}
+		.order_info_content{
+			.tit{
+				.col-sm-6{
+					border-bottom: 2px solid rgba(45, 167, 224, 0.35);
+					text-align:center;
+					p{
+						margin-bottom:0;
+						color: rgba(45, 167, 224, 0.35);
+						font-size: 20px;
+    					font-weight: 600;
+					}
+				}
+			}
+			.con{
+				.col-sm-6{
+					text-align:center;
+					height: 100px;
+					line-height: 100px;
+					border-bottom: 1px dashed #ccc;
+					margin-bottom: 30px;
+				}
+				.baby_desc{
+					text-overflow: ellipsis;
+					overflow: hidden;
+					white-space: nowrap;
+					color: #818181;
+				}
+				.baby_price{
+					font-weight: 700;
+    				font-size: 24px;
+    				color: #FF6666;
+				}
+			}
+		}
+		.order_submit{
+			border: 1px solid #ccc;
+			text-align:right;
+			span{
+				font-weight: 700;
+			    font-size: 24px;
+			    color: #FF6666;
+			}
+		}
+		.btn-sure{
+			background-color:#FF6666;
+			border-radius: 0;
+			color: #fff;
+			font-weight: 600;
+			letter-spacing:10px;
+			outline: none;
+
+		}
+	}
+}
+.message{
+	position: absolute;
+    top: 40%;
+    left: 30%;
+    font-size: 30px;
+    label{
+    	color: #4CAF50;
+    	margin-right: 30px;
+    }
+}

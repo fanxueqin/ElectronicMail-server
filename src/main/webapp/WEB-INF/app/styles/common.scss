@@ -1,0 +1,82 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.header{
+	height: 80px;
+	a{
+		text-decoration: none;
+	}
+	ul{
+		height:80px;
+		border:none;
+		li{
+			display: inline-block;
+			list-style: none;
+			padding:0  20px;
+			border-box: border-box;
+			line-height:80px;
+			height:80px;
+			
+		}
+	}
+	.logo{
+		line-height: 80px;
+	    font-size: 28px;
+	    float: left;
+	    margin-left: 20px;
+	    a{
+	    	color: #cfb9e0;
+	    }
+	    font-family: '微软雅黑'
+	}
+	.navbar{
+		margin-right:100px;
+	}
+	.active a{
+		color: #FCA1A1;
+	}
+}
+.floatR{
+	float: right;
+}
+.content-area{
+	min-height: 400px;
+}
+.footer{
+	margin-top:100px;
+	height: 70px;
+    padding-top: 10px;
+    color: #706c6c;
+    border-top: 1px solid #e5e5e5;
+    background-color: #1f1f1f;	
+    p{
+    	float: right;
+    }
+}
+.contactWrap{
+	width: 100%;
+	position:relative;
+	height: 450px;
+	margin: 0 auto;
+	img{
+		display: block;
+		position:absolute;
+		top: 50%;
+		margin-top:-200px;
+		left: 40%;
+		height: 400px;
+
+	}
+}
+.aboutWrap{
+	margin:100px;
+	border-radius:4px;
+	h3{
+		letter-spacing: 3px;
+	}
+}
+.active_shop{
+	background-color: #cfb9e0;
+	color:#fff;
+}

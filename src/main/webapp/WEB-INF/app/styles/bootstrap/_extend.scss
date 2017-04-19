@@ -1,0 +1,36 @@
+// ### Row
+.row-striped {
+    > .row {
+        &:nth-child(2n) {
+            background-color: #f9f9f9;
+        }
+    }
+}
+
+.row.near-row {
+    & > div {
+        padding-left: 4px;
+        padding-right: 4px;
+
+        &:first-child {
+            padding-left: 15px;
+        }
+
+        &:last-child {
+            padding-right: 15px;
+        }
+    }
+}
+
+// ### Table
+.table.table-noborder {
+    td {
+        border: none;
+    }
+}
+
+.modal-inner-footer {
+    border-top: 1px solid #e5e5e5;
+    padding: 15px 0;
+    margin-bottom: -15px;
+}

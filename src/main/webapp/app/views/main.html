@@ -1,0 +1,488 @@
+<div class="banner">
+<!-- 搜索区 -->
+	<div class="searchWrap">
+		<div class="input-group search">
+				<input type="text" name="search" class="form-control" placeholder="搜索">
+				<div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+		</div>
+	</div>
+<!-- 导航区 -->
+	<div class="nav_bar">
+		<ul>
+			<li ui-sref-active="active_shop" ui-sref="main">首页</li>
+			<li ui-sref-active="active_shop" ui-sref="shop_hufu">护肤</li>
+			<li ui-sref-active="active_shop" ui-sref="shop_makeup">彩妆</li>
+			<li ui-sref-active="active_shop" ui-sref="shop_fashion">时尚</li>
+			<li ui-sref-active="active_shop" ui-sref="shop_accesory">配饰</li>
+			<li ui-sref-active="active_shop" ui-sref="shop_home">家居</li>
+		</ul>
+	</div>
+<!-- 轮播区 -->
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+	  <!-- Indicators -->
+	  <ol class="carousel-indicators">
+	    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+	    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+	    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+	  </ol>
+
+	  <!-- Wrapper for slides -->
+	  <div class="carousel-inner" role="listbox">
+	 	<div class="item active">
+		      <img src="../images/goods/1.jpg" alt="...">
+		      <div class="carousel-caption">
+		        ...
+		      </div>
+	    </div>
+	    <div class="item">
+	      <img src="../images/goods/4.jpg" alt="...">
+	      <div class="carousel-caption">
+	        ...
+	      </div>
+	    </div>
+	    <div class="item">
+	      <img src="../images/goods/14.jpg" alt="...">
+	      <div class="carousel-caption">
+	        ...
+	      </div>
+	    </div>
+	  </div>
+
+	  <!-- Controls -->
+	  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	    <span class="sr-only">Previous</span>
+	  </a>
+	  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	    <span class="sr-only">Next</span>
+	  </a>
+	</div>
+<!-- 推荐区 -->
+	<div class="recommend">
+		<div class="clothes">
+			<a>
+				<img src="../images/banner/7.jpg" usemap="#Map">
+				<map name="#Map">
+					<area shape="rect" coords="0,0,550,852" ui-sref="detail">
+					<area shape="rect" coords="551,0,1100,852" ui-sref="detail">
+				</map>
+			</a>
+			<a ui-sref="detail"><img src="../images/banner/11.jpg"></a>
+		</div>
+		
+		<div class="maekup">
+			<a href="javascript:;"><img src="../images/banner/4.png"></a><!-- 
+			<a href="javascript:;"><img src="../images/banner/9.jpg"></a>
+			<a href="javascript:;"><img src="../images/banner/10.jpg"></a> -->
+		</div>
+	</div>
+<!-- 热销区 -->
+	<div class="hot_sale">
+		<div class="col-md-7 content-lgrid">
+			<div class="col-sm-6 content-img-left text-center">
+				<div class="content-grid-effect slow-zoom vertical">
+					<div class="img-box"><img src="../images/list_recomend_3/4.jpg" alt="image" class="img-responsive zoom-img"></div>
+						<div class="info-box">
+							<div class="info-content simpleCart_shelfItem">
+										<h4>Mobiles</h4>
+										<span class="separator"></span>
+										<p><span class="item_price">￥160</span></p>
+										<span class="separator"></span>
+										<a class="item_add hvr-outline-out button2" href="#">Buy it Now </a>
+							</div>
+						</div>
+				</div>
+			</div>
+			<div class="col-sm-6 content-img-right">
+				<h3>Special Offers and 50%<span>Discount On</span> Mobiles</h3>
+			</div>
+			
+			<div class="col-sm-6 content-img-right">
+				<h3>Buy 1 get 1  free on <span> Branded</span> Watches</h3>
+			</div>
+			<div class="col-sm-6 content-img-left text-center">
+				<div class="content-grid-effect slow-zoom vertical">
+					<div class="img-box"><img src="../images/list_recomend_5/2.jpg" alt="image" class="img-responsive zoom-img"></div>
+						<div class="info-box">
+							<div class="info-content simpleCart_shelfItem">
+								<h4>Watches</h4>
+								<span class="separator"></span>
+								<p><span class="item_price">￥250</span></p>
+								<span class="separator"></span>
+								<a class="item_add hvr-outline-out button2" href="#">Buy it Now </a>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-5 content-rgrid text-center">
+			<div class="content-grid-effect slow-zoom vertical">
+					<div class="img-box"><img src="../images/banner/p4.jpg" alt="image" class="img-responsive zoom-img"></div>
+						<div class="info-box">
+							<div class="info-content simpleCart_shelfItem">
+										<h4>Shoes</h4>
+										<span class="separator"></span>
+										<p><span class="item_price">￥150</span></p>
+										<span class="separator"></span>
+										<a class="item_add hvr-outline-out button2" href="#">Buy it Now </a>
+							</div>
+						</div>
+				</div>
+		</div>
+	</div>
+<!-- 新品区 -->
+	<div id="New_shopping" class="new_shopping" ng-controller="MainCtrl_new_shopping">
+		<div class="tab_name"><span>新品专场</span></div>
+		
+		<div class="new_shopping_list">
+			<div class="tab_title">
+				<ul>
+					<li ng-class="{'active' : data.current == 1 }" ng-click="setCurrent(1)"><span>少女的家居</span></li>
+					<li ng-class="{'active' : data.current == 2 }" ng-click="setCurrent(2)"><span>大补“水”</span></li>
+					<li ng-class="{'active' : data.current == 3 }" ng-click="setCurrent(3)"><span>彩妆小可爱</span></li>
+				</ul>
+			</div>
+			<div class="tab_content">
+				<ul ng-if="data.current == 1">
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend/1.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="出门在外想补个妆或者想自拍时光线却很暗，随身携带一个EMIE美妆镜，“镜子占用空间很小，放在包包里随时可以拿出来使用”，三级LED补光功能，“可以根据光线明暗度选择合适的补光强度”，“终于不用担心自拍时是个黑人了”，高清镜面，“可以照出脸上每一个小细节，化一个精致无死角的妆”，“强迫症患者的福音”">
+							<a href="javascript:;">
+								“出门在外想补个妆或者想自拍时光线却很暗，随身携带一个EMIE美妆镜，“镜子占用空间很小，放在包包里随时可以拿出来使用”，三级LED补光功能，“可以根据光线明暗度选择合适的补光强度”，“终于不用担心自拍时是个黑人了”，高清镜面，“可以照出脸上每一个小细节，化一个精致无死角的妆”，“强迫症患者的福音”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 78.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend/4.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="很多女盆友在选择香水时都会略感不知所措，很难选到心仪的一款，那气味图书馆这款经典Q版的香水礼盒可以带给你跨品类的香氛体验，拥有天使、桂花、雏菊、粉、彩虹、雨滴、东京、热恋、伦敦、黑色10种味道，包含了气味图书馆香水创作的五大经典系列，带给你千变万化的嗅觉体验。">
+							<a href="javascript:;">
+								“很多女盆友在选择香水时都会略感不知所措，很难选到心仪的一款，那气味图书馆这款经典Q版的香水礼盒可以带给你跨品类的香氛体验，拥有天使、桂花、雏菊、粉、彩虹、雨滴、东京、热恋、伦敦、黑色10种味道，包含了气味图书馆香水创作的五大经典系列，带给你千变万化的嗅觉体验。”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 338.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend/7.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="半夜醒来有束温暖的灯光是很幸福的事情，这款氛围灯一拍就亮，三级可调节光源，轻触即可变换，光线柔和不刺眼。圆润的造型忍不住想要摸一下，无按键无棱角的设计是为了在使用时让有宝宝的家庭避免受到不必要的伤害，给家人多角度的贴心保护，它轻盈小巧还防水，脏了可以直接用清水清洗哦，一次充电可长达6小时照明，怕黑的女盆友可以开着小夜灯睡觉啦，还有涟漪般的感应式无线充电底座，只需把小夜灯往上面一放即可充电，处处体现了设计者的用心。">
+							<a href="javascript:;">
+								“半夜醒来有束温暖的灯光是很幸福的事情，这款氛围灯一拍就亮，三级可调节光源，轻触即可变换，光线柔和不刺眼。圆润的造型忍不住想要摸一下，无按键无棱角的设计是为了在使用时让有宝宝的家庭避免受到不必要的伤害，给家人多角度的贴心保护，它轻盈小巧还防水，脏了可以直接用清水清洗哦，一次充电可长达6小时照明，怕黑的女盆友可以开着小夜灯睡觉啦，还有涟漪般的感应式无线充电底座，只需把小夜灯往上面一放即可充电，处处体现了设计者的用心。”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 96.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend/10.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="很多女盆友涂保养品不能很好的吸收，莱克24k黄金美容棒就能很好帮到女盆友，真正24k纯金烤镀，HC-FM101通过振动释放大量黄金负离子，刺激真皮层分泌更多胶原蛋白，提拉轮廓，紧致、嫩滑皮肤，配合着眼霜、面膜一起用吸收效果好，敏感肌也不怕。每分钟6000次高频振动，深层激活肌肤细胞活力， 360°防水设计，泡澡时也能安心使用，还有收纳袋放便女盆友外出携带">
+							<a href="javascript:;">
+								“很多女盆友涂保养品不能很好的吸收，莱克24k黄金美容棒就能很好帮到女盆友，真正24k纯金烤镀，HC-FM101通过振动释放大量黄金负离子，刺激真皮层分泌更多胶原蛋白，提拉轮廓，紧致、嫩滑皮肤，配合着眼霜、面膜一起用吸收效果好，敏感肌也不怕。每分钟6000次高频振动，深层激活肌肤细胞活力， 360°防水设计，泡澡时也能安心使用，还有收纳袋放便女盆友外出携带。”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 56.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend/13.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="爱生活爱健康的女盆友们肯定不会错过各种好渴的果汁！SKG这款果汁机使用方便，打好果汁秒变果汁杯。适用低温环境和冰箱，又能耐高温。无色素、无异味，宝宝可直接饮用哦！底部标有不含双酚标准，用得放心。各种奶昔、果汁、辅食一键搞定，想喝就喝。杯体可拆，方便清洗，用水一冲就OK。双杯设计随心选择，密封严实，滴水不漏，打好果汁，拧上瓶盖即可带走！">
+							<a href="javascript:;">
+								“爱生活爱健康的女盆友们肯定不会错过各种好渴的果汁！SKG这款果汁机使用方便，打好果汁秒变果汁杯。适用低温环境和冰箱，又能耐高温。无色素、无异味，宝宝可直接饮用哦！底部标有不含双酚标准，用得放心。各种奶昔、果汁、辅食一键搞定，想喝就喝。杯体可拆，方便清洗，用水一冲就OK。双杯设计随心选择，密封严实，滴水不漏，打好果汁，拧上瓶盖即可带走！”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 102.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend/16.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="每到情人节或生日送个别出心裁的礼物可不是一个省心的事儿，DR Design的香皂花束礼盒限定款光看包装就很体面，同时也非常实用，忙碌了一天，摘一片花瓣放在热水里，好好地泡个脚或者洒在浴缸内舒舒服服泡个澡，淡淡地花香不刺鼻，给身体做一个简单的小SPA，疲劳一扫而去。花朵内含保湿因子和植物精油，遇水可以完全融化，非常轻盈柔软~PH值为中性，所使用的原料为天然食品，无毒安全。绝对是给女票和闺蜜的送礼首选哟~">
+							<a href="javascript:;">
+								“每到情人节或生日送个别出心裁的礼物可不是一个省心的事儿，DR Design的香皂花束礼盒限定款光看包装就很体面，同时也非常实用，忙碌了一天，摘一片花瓣放在热水里，好好地泡个脚或者洒在浴缸内舒舒服服泡个澡，淡淡地花香不刺鼻，给身体做一个简单的小SPA，疲劳一扫而去。花朵内含保湿因子和植物精油，遇水可以完全融化，非常轻盈柔软~PH值为中性，所使用的原料为天然食品，无毒安全。绝对是给女票和闺蜜的送礼首选哟~”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 99.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend/19.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="每次化妆的时候都很烦恼卧室灯昏黄又暗，自己看镜子里好好地一出门就发现太浓了或者没抹匀”，muiD化妆镜台灯，帮助女盆友“告别光线陷阱~” 它“当化妆镜使用时外圈的光度足够，”“白色光亮度高，化妆时不会出现光线偏差”，“高清看清每一个毛孔~”“日常化妆使用没问题”。触摸开关一碰就能亮，而且180°内“镜子的角度可以随意选择”，“化妆很方便”。翻转到90°位置，它就变身成台灯，“光源比较柔和，”“不会太暗也不会刺眼”，可调的设计，女盆友只要长按着“到自己喜欢的亮度就可以”，“超亮的一档适合看书”，晚上来了情怀写字写文都ok。“底部的搁置盘，可以放点化妆品”或是首饰等小物，女盆友说“太心水了">
+							<a href="javascript:;">
+								“每次化妆的时候都很烦恼卧室灯昏黄又暗，自己看镜子里好好地一出门就发现太浓了或者没抹匀”，muiD化妆镜台灯，帮助女盆友“告别光线陷阱~” 它“当化妆镜使用时外圈的光度足够，”“白色光亮度高，化妆时不会出现光线偏差”，“高清看清每一个毛孔~”“日常化妆使用没问题”。触摸开关一碰就能亮，而且180°内“镜子的角度可以随意选择”，“化妆很方便”。翻转到90°位置，它就变身成台灯，“光源比较柔和，”“不会太暗也不会刺眼”，可调的设计，女盆友只要长按着“到自己喜欢的亮度就可以”，“超亮的一档适合看书”，晚上来了情怀写字写文都ok。“底部的搁置盘，可以放点化妆品”或是首饰等小物，女盆友说“太心水了”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 188.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend/22.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="早上一醒来皮肤干巴巴、头发乱糟糟，头天晚上为了睡个“美容觉”抹得一大堆护肤品精华素全都不奏效，别忙着选择go die，是枕套的问题！普通枕套容易跟皮肤、头发摩擦还会吸收护肤品中的水分。GIGI、Kim一众明星都在用Slip的真丝枕套，“滑溜溜的触感真真是没话说，枕着睡觉幸福感满满”。桑蚕丝质地柔滑，减少睡觉时产生的摩擦，“脸碰着觉得炒鸡舒服”，经常侧睡的小薯，有了它再也不怕压一脸皱纹啦。蚕丝中的丝胶成分能防止螨虫霉菌滋生，氨基酸成分还能滋养肌肤，脸部嫩滑滑头发不毛躁，什么护肤品都不抹也能睡个美容觉！清凉舒适的面料，天热时睡觉也不闷！“枕套特别美，连外包装都很高大上，送人自用都超棒”！">
+							<a href="javascript:;">
+								“早上一醒来皮肤干巴巴、头发乱糟糟，头天晚上为了睡个“美容觉”抹得一大堆护肤品精华素全都不奏效，别忙着选择go die，是枕套的问题！普通枕套容易跟皮肤、头发摩擦还会吸收护肤品中的水分。GIGI、Kim一众明星都在用Slip的真丝枕套，“滑溜溜的触感真真是没话说，枕着睡觉幸福感满满”。桑蚕丝质地柔滑，减少睡觉时产生的摩擦，“脸碰着觉得炒鸡舒服”，经常侧睡的小薯，有了它再也不怕压一脸皱纹啦。蚕丝中的丝胶成分能防止螨虫霉菌滋生，氨基酸成分还能滋养肌肤，脸部嫩滑滑头发不毛躁，什么护肤品都不抹也能睡个美容觉！清凉舒适的面料，天热时睡觉也不闷！“枕套特别美，连外包装都很高大上，送人自用都超棒”！”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 488.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend/25.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="从容优雅的英式情怀，不仅实用，而且增添了生活的情调。杯子可以用来喝花茶，花瓣在杯子里荡漾，与杯子的花纹融为一体，仿佛时间都变慢了。香浓的咖啡味飘散在这伦敦风情的杯子中，更显品位，如此有情调的东东，不管是亲戚结婚还是朋友生日，作为实用而且有颜值的好礼物，选它是很不错的哟~~">
+							<a href="javascript:;">
+								“从容优雅的英式情怀，不仅实用，而且增添了生活的情调。杯子可以用来喝花茶，花瓣在杯子里荡漾，与杯子的花纹融为一体，仿佛时间都变慢了。香浓的咖啡味飘散在这伦敦风情的杯子中，更显品位，如此有情调的东东，不管是亲戚结婚还是朋友生日，作为实用而且有颜值的好礼物，选它是很不错的哟~~”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 59.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend/28.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="爱美的女盆友房间里首饰挂件太多了，需要一个功能强大又高大上的首饰收纳盒才方便自己换装打扮啊！Vlando的欧式首饰收纳盒用优质原材料纯手工制作，它的马卡龙系列收纳盒外型小巧可爱，装满戒指、耳环、锁骨链这类小首饰放在包里带出门，还能根据不同场合变装呢。用过的女盆友都说“做工很精致，质量扛扛”，“颜色非常好看，这么可爱的首饰盒让人少女心爆棚啊">
+							<a href="javascript:;">
+								“爱美的女盆友房间里首饰挂件太多了，需要一个功能强大又高大上的首饰收纳盒才方便自己换装打扮啊！Vlando的欧式首饰收纳盒用优质原材料纯手工制作，它的马卡龙系列收纳盒外型小巧可爱，装满戒指、耳环、锁骨链这类小首饰放在包里带出门，还能根据不同场合变装呢。用过的女盆友都说“做工很精致，质量扛扛”，“颜色非常好看，这么可爱的首饰盒让人少女心爆棚啊”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 58.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend/31.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="健身或者沐浴之后，需要一块浴巾来擦水擦汗了。日本p·o·a·c的条纹纯棉浴巾，棉质亲肤又舒适，吸水性也非常棒，洗涤之后也很快能够晾干，特别适合喜欢干爽感觉的女盆友。条纹设计非常治愈，三只黑猫的图案也是充满日本风情，备上一条在身边，擦水擦汗都靠它。">
+							<a href="javascript:;">
+								“健身或者沐浴之后，需要一块浴巾来擦水擦汗了。日本p·o·a·c的条纹纯棉浴巾，棉质亲肤又舒适，吸水性也非常棒，洗涤之后也很快能够晾干，特别适合喜欢干爽感觉的女盆友。条纹设计非常治愈，三只黑猫的图案也是充满日本风情，备上一条在身边，擦水擦汗都靠它。”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 85.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend/34.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="说它是牙刷队长简直震惊了，粉金相拼的颜色，队长还以为它是一支口红，颜值那么高简直逼死别的牙刷。松下EW-DS19电动牙刷打破了传统牙刷湿哒哒不好携带的传统，随身带在化妆包里，任何时刻都能用起来。高速声波振动扫荡各种死角，两端突起的刷毛清洁的更干净，背面的舌苔清洁刷还能按摩清洁舌苔，舌苔干净口气才更清新。柔粉色让每个女盆友妹子刷牙也能做个小公举。">
+							<a href="javascript:;">
+								“说它是牙刷队长简直震惊了，粉金相拼的颜色，队长还以为它是一支口红，颜值那么高简直逼死别的牙刷。松下EW-DS19电动牙刷打破了传统牙刷湿哒哒不好携带的传统，随身带在化妆包里，任何时刻都能用起来。高速声波振动扫荡各种死角，两端突起的刷毛清洁的更干净，背面的舌苔清洁刷还能按摩清洁舌苔，舌苔干净口气才更清新。柔粉色让每个女盆友妹子刷牙也能做个小公举。”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 199.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+				</ul>
+				<ul ng-if="data.current == 2">
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend_2/1.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="倩碧的这款晚霜“质感细腻，没有香精的味道”，“上脸好推，吸收也不错”，有效打击有害的自由基，加强皮肤的屏障，对抗衰老的早期迹象，令皮肤柔软光滑，看起来更年轻，感觉舒适，“早上起来的时候白白净净的”。非常适合极干性至混合干性皮肤。每一个早晨，都是肌肤年轻的开端！">
+							<a href="javascript:;">
+								“倩碧的这款晚霜“质感细腻，没有香精的味道”，“上脸好推，吸收也不错”，有效打击有害的自由基，加强皮肤的屏障，对抗衰老的早期迹象，令皮肤柔软光滑，看起来更年轻，感觉舒适，“早上起来的时候白白净净的”。非常适合极干性至混合干性皮肤。每一个早晨，都是肌肤年轻的开端！”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 478.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend_2/4.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="著名的倩碧护肤三部曲之一，但温和洁肤水因为酒精问题一直被人诟病，其实女盆友说“很多护肤品都有酒精，能帮助收缩毛孔，促进吸收，控油杀菌，而且倩碧的酒精非常安全，连国外的皮肤医生都推荐”，而且作为二次洁面的化妆水，含酒精能更好的帮助清洁毛孔，所以除非是对酒精过敏，不然还是可以放心使用的。“每天晚上用它擦完之后，化妆棉上都会有些发黄黑的东西，效果很明显”，“一整天皮肤都是是湿润润的，丝毫不觉得干燥和油腻，而且角质去除干净后，皮肤暗淡的情况真的是大有改善，太令人惊喜了”。4号适合极油性肌肤，特别适合夏天使用，能很好的控油，清除表皮老化细胞。">
+							<a href="javascript:;">
+								“著名的倩碧护肤三部曲之一，但温和洁肤水因为酒精问题一直被人诟病，其实女盆友说“很多护肤品都有酒精，能帮助收缩毛孔，促进吸收，控油杀菌，而且倩碧的酒精非常安全，连国外的皮肤医生都推荐”，而且作为二次洁面的化妆水，含酒精能更好的帮助清洁毛孔，所以除非是对酒精过敏，不然还是可以放心使用的。“每天晚上用它擦完之后，化妆棉上都会有些发黄黑的东西，效果很明显”，“一整天皮肤都是是湿润润的，丝毫不觉得干燥和油腻，而且角质去除干净后，皮肤暗淡的情况真的是大有改善，太令人惊喜了”。4号适合极油性肌肤，特别适合夏天使用，能很好的控油，清除表皮老化细胞。”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 266.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend_2/7.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="著名的倩碧护肤三部曲之一，但温和洁肤水因为酒精问题一直被人诟病，其实女盆友说“很多护肤品都有酒精，能帮助收缩毛孔，促进吸收，控油杀菌，而且倩碧的酒精非常安全，连国外的皮肤医生都推荐”，而且作为二次洁面的化妆水，含酒精能更好的帮助清洁毛孔，所以除非是对酒精过敏，不然还是可以放心使用的。“每天晚上用它擦完之后，化妆棉上都会有些发黄黑的东西，效果很明显”，“一整天皮肤都是是湿润润的，丝毫不觉得干燥和油腻，而且角质去除干净后，皮肤暗淡的情况真的是大有改善，太令人惊喜了”。4号适合极油性肌肤，特别适合夏天使用，能很好的控油，清除表皮老化细胞。">
+							<a href="javascript:;">
+								“著名的倩碧护肤三部曲之一，但温和洁肤水因为酒精问题一直被人诟病，其实女盆友说“很多护肤品都有酒精，能帮助收缩毛孔，促进吸收，控油杀菌，而且倩碧的酒精非常安全，连国外的皮肤医生都推荐”，而且作为二次洁面的化妆水，含酒精能更好的帮助清洁毛孔，所以除非是对酒精过敏，不然还是可以放心使用的。“每天晚上用它擦完之后，化妆棉上都会有些发黄黑的东西，效果很明显”，“一整天皮肤都是是湿润润的，丝毫不觉得干燥和油腻，而且角质去除干净后，皮肤暗淡的情况真的是大有改善，太令人惊喜了”。4号适合极油性肌肤，特别适合夏天使用，能很好的控油，清除表皮老化细胞。”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 266.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend_2/10.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="它，可以做晚霜、精华、 面膜、按摩霜、唇霜、眼霜！这个产品的瓶口很贴心地有透明的保护套，挤出来是蓝色半透明质地的乳液，“挤到手上会水化沿着手指往下滑”，“特别容易擦开”，“抹在脸上很细腻，感觉很快就被皮肤吸收了”，起到补水保湿的效果，“皮肤干的时候我拿它当睡眠面膜使用，保湿效果杠杠的”，“感觉像是在皮肤表面树起了一层滋润的膜，但是又不会闷住皮肤无法呼吸”。“味道也好闻”，而且“性价比很高”！适用于所有肤质。">
+							<a href="javascript:;">
+								“它，可以做晚霜、精华、 面膜、按摩霜、唇霜、眼霜！这个产品的瓶口很贴心地有透明的保护套，挤出来是蓝色半透明质地的乳液，“挤到手上会水化沿着手指往下滑”，“特别容易擦开”，“抹在脸上很细腻，感觉很快就被皮肤吸收了”，起到补水保湿的效果，“皮肤干的时候我拿它当睡眠面膜使用，保湿效果杠杠的”，“感觉像是在皮肤表面树起了一层滋润的膜，但是又不会闷住皮肤无法呼吸”。“味道也好闻”，而且“性价比很高”！适用于所有肤质。”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 266.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend_2/13.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="有色面霜可以修饰肤色不均的情况， 同时提供紫外线防护。质地细致薄透并含护肤成分，就像只是轻轻多涂了一层乳液一般，感觉就像没上妆一样，但是却有很好的修饰肤色效果。产品本身有滋润效果，让你的肤色尽量贴近自然肤色，薄透自然却拥有遮暇力。女盆友说“混油无压力，上脸自然又滋润”，“不氧化！不变色！不跳 Tone”，“LM在我用过的为数不多的染色面霜和滋润型BB霜中，已经是战斗机一般的存在了">
+							<a href="javascript:;">
+								“有色面霜可以修饰肤色不均的情况， 同时提供紫外线防护。质地细致薄透并含护肤成分，就像只是轻轻多涂了一层乳液一般，感觉就像没上妆一样，但是却有很好的修饰肤色效果。产品本身有滋润效果，让你的肤色尽量贴近自然肤色，薄透自然却拥有遮暇力。女盆友说“混油无压力，上脸自然又滋润”，“不氧化！不变色！不跳 Tone”，“LM在我用过的为数不多的染色面霜和滋润型BB霜中，已经是战斗机一般的存在了”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 426.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+				</ul>
+				<ul ng-if="data.current == 3">
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend_3/1.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="这支是雅诗兰黛主打浓密的睫毛膏，三种浓密纤维成分融入慕斯底液中，“质感确实很浓密，卷翘度还可以”。浓密的睫毛可以令双眼立即放大，看起来更有神也更有气场，无论是工作场合或是聚会上都必不可少，“用第一次就喜欢上了，浓密效果实打实，定型时间久”，“睫毛膏是好用又回购的，浓密效果超好”。还有维生素滋养成分，让睫毛美美的同时还能吸收养分。# 01黑色打造有神电眼，气场倍增。">
+							<a href="javascript:;">
+								“这支是雅诗兰黛主打浓密的睫毛膏，三种浓密纤维成分融入慕斯底液中，“质感确实很浓密，卷翘度还可以”。浓密的睫毛可以令双眼立即放大，看起来更有神也更有气场，无论是工作场合或是聚会上都必不可少，“用第一次就喜欢上了，浓密效果实打实，定型时间久”，“睫毛膏是好用又回购的，浓密效果超好”。还有维生素滋养成分，让睫毛美美的同时还能吸收养分。# 01黑色打造有神电眼，气场倍增。”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 278.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend_3/4.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="NARS星灿奢华眼影，据说“这一块可以撑起整个眼妆”，因为它有美丽的偏光每个角度看起来都不一样，顺滑好上色，显色度好，用手指往眼皮一抹，“可以波光粼粼，可以温柔动人”。Dione灰棕调，让双眸看起来更深邃神秘，属于低调又女神类型的，珠光超细腻。对于懒癌和手残星人来说“用手指随便抹抹就可以出门”，日光下双眼blingbling，不飞粉，单用或者和其他的颜色叠加都很好">
+							<a href="javascript:;">
+								“NARS星灿奢华眼影，据说“这一块可以撑起整个眼妆”，因为它有美丽的偏光每个角度看起来都不一样，顺滑好上色，显色度好，用手指往眼皮一抹，“可以波光粼粼，可以温柔动人”。Dione灰棕调，让双眸看起来更深邃神秘，属于低调又女神类型的，珠光超细腻。对于懒癌和手残星人来说“用手指随便抹抹就可以出门”，日光下双眼blingbling，不飞粉，单用或者和其他的颜色叠加都很好”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 266.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend_3/7.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="沿袭持久粉底的不脱妆配方，雅诗兰黛这款轻透粉底液更是将无瑕裸肌发挥到极致。轻透粉质，打造持久裸妆，让你的脸整天不泛油，拥有梦寐以求的自然粉嫩娇容，从此只需轻妆上阵，“第一次用的那天30几度，去拜了一天山，到下午只是鼻子出了一层油居然都还没脱妆”。从上妆那一刻起，它就亲和贴服你的娇颜，肌肤感觉舒适透气，粉嫩轻妆了然无痕，“肤色也有了很好的改善，十分自然，并呈现水润光泽感。“脸上只见犹如天生自带的肌肤原色。# 12很适合肤色健康的女盆友们">
+							<a href="javascript:;">
+								“沿袭持久粉底的不脱妆配方，雅诗兰黛这款轻透粉底液更是将无瑕裸肌发挥到极致。轻透粉质，打造持久裸妆，让你的脸整天不泛油，拥有梦寐以求的自然粉嫩娇容，从此只需轻妆上阵，“第一次用的那天30几度，去拜了一天山，到下午只是鼻子出了一层油居然都还没脱妆”。从上妆那一刻起，它就亲和贴服你的娇颜，肌肤感觉舒适透气，粉嫩轻妆了然无痕，“肤色也有了很好的改善，十分自然，并呈现水润光泽感。“脸上只见犹如天生自带的肌肤原色。# 12很适合肤色健康的女盆友们”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 56.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend/10.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="迪奥这支真我EDP是真我系列的经典之作，太适合低调优雅的各名媛女盆友了，“瓶身设计很美丽”，流畅的曲线和长长的脖颈，无一不彰显的女性的优雅高贵。性感的芬芳中融入明艳的花香，精致甜美，以托斯卡纳鸢尾花作为中调，是真我原版基础上，更馥郁厚重的香气，更能体现真我的独特风采，“适合性感成熟的大女人”~喷在身上立刻化作一层芬芳的柔纱包裹全身，散发着独一无二的气质和光芒。自然洒脱的做率性的自己吧~">
+							<a href="javascript:;">
+								“迪奥这支真我EDP是真我系列的经典之作，太适合低调优雅的各名媛女盆友了，“瓶身设计很美丽”，流畅的曲线和长长的脖颈，无一不彰显的女性的优雅高贵。性感的芬芳中融入明艳的花香，精致甜美，以托斯卡纳鸢尾花作为中调，是真我原版基础上，更馥郁厚重的香气，更能体现真我的独特风采，“适合性感成熟的大女人”~喷在身上立刻化作一层芬芳的柔纱包裹全身，散发着独一无二的气质和光芒。自然洒脱的做率性的自己吧~”。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 964.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+					<li>
+						<div class="good_img">
+							<a href="javascript:;"><img src="../images/list_recomend/13.jpg"></a>
+						</div>
+						<h3 class="good_desc" title="Bifesta的王牌产品眼唇卸妆液简直名声在外，化妆的女盆友们一定都人手一瓶。今年新推出的碳酸泡沫洁面，共分为三款，这款蓝色瓶子为去角质型，主打深层清洁毛孔，女盆友说：“按压泵头的设计，出来就是超级浓密的泡沫，像给脸做泡泡浴一样，一级棒！一点也不闷！”“味道是很清新的柚子或者橘子味，早上当做晨间洁面感觉心情都好啦”，“清洁力很赞，多揉搓一会能搓出一些角质~当做卸妆后的二次清洁很舒服”，“基本没毛病的洁面，是一颗不贵好拔的好草！”">
+							<a href="javascript:;">
+								“Bifesta的王牌产品眼唇卸妆液简直名声在外，化妆的女盆友们一定都人手一瓶。今年新推出的碳酸泡沫洁面，共分为三款，这款蓝色瓶子为去角质型，主打深层清洁毛孔，女盆友说：“按压泵头的设计，出来就是超级浓密的泡沫，像给脸做泡泡浴一样，一级棒！一点也不闷！”“味道是很清新的柚子或者橘子味，早上当做晨间洁面感觉心情都好啦”，“清洁力很赞，多揉搓一会能搓出一些角质~当做卸妆后的二次清洁很舒服”，“基本没毛病的洁面，是一颗不贵好拔的好草！””。
+							</a>
+						</h3>
+						<div class="good_price">
+							<span class="now">￥ 48.0</span>
+							<!--<span class="origin">¥ 78.0</span>
+	            			<span class="discount">(折)</span>-->
+						</div>
+					</li>
+				</ul>
+				
+			</div>
+		</div>
+	</div>
+	
+</div>
